@@ -45,7 +45,13 @@ class TopNavBar extends StatelessWidget {
           const SizedBox(width: 16),
           ElevatedButton(
             onPressed: () {
-              html.window.open('assets/resume/Parvathi_M_Resume.pdf', '_blank');
+              final anchor =
+                  html.AnchorElement(
+                      href: 'assets/resume/Resume_ParvathiM_Team_Lead.pdf',
+                    )
+                    ..download = 'Parvathi_M_Resume.pdf'
+                    ..target = '_blank';
+              anchor.click();
             },
             child: const Text("Download Resume"),
           ),
